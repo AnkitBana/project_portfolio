@@ -1,0 +1,70 @@
+[
+  {
+    "id": "project-1",
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce platform with payment integration and admin dashboard",
+    "longDescription": "Built a comprehensive e-commerce solution featuring user authentication, product management, shopping cart functionality, secure payment processing with Stripe, order tracking, and an admin dashboard for inventory management. Implemented responsive design and optimized for performance.",
+    "technologies": ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+    "image": "/images/projects/ecommerce.jpg",
+    "liveUrl": "https://example-ecommerce.com",
+    "githubUrl": "https://github.com/yourusername/ecommerce",
+    "featured": true,
+    "category": "Web Development",
+    "startDate": "2023-01-15",
+    "endDate": "2023-06-30"
+  },
+  {
+    "id": "project-2",
+    "title": "Task Management App",
+    "description": "Real-time collaborative task management application with team features",
+    "longDescription": "Developed a real-time task management system allowing teams to collaborate efficiently. Features include drag-and-drop task boards, real-time updates using WebSockets, user roles and permissions, file attachments, comments, and notifications. Integrated with calendar and email services.",
+    "technologies": ["React", "Node.js", "Socket.io", "PostgreSQL", "Redis", "AWS"],
+    "image": "/images/projects/taskmanager.jpg",
+    "liveUrl": "https://example-tasks.com",
+    "githubUrl": "https://github.com/yourusername/taskmanager",
+    "featured": true,
+    "category": "Web Development",
+    "startDate": "2023-07-01",
+    "endDate": "2023-11-15"
+  },
+  {
+    "id": "project-3",
+    "title": "Weather Dashboard",
+    "description": "Interactive weather dashboard with forecasts and historical data visualization",
+    "longDescription": "Created an interactive weather dashboard that displays current weather conditions, 7-day forecasts, and historical weather data with beautiful visualizations. Integrated multiple weather APIs for accurate data, implemented geolocation features, and added customizable alerts for weather conditions.",
+    "technologies": ["Vue.js", "Chart.js", "Weather API", "Tailwind CSS"],
+    "image": "/images/projects/weather.jpg",
+    "liveUrl": "https://example-weather.com",
+    "githubUrl": "https://github.com/yourusername/weather-dashboard",
+    "featured": false,
+    "category": "Web Development",
+    "startDate": "2023-03-10",
+    "endDate": "2023-04-20"
+  },
+  {
+    "id": "project-4",
+    "title": "Social Media Analytics Tool",
+    "description": "Analytics platform for tracking social media performance across multiple platforms",
+    "longDescription": "Built a comprehensive analytics tool that aggregates data from multiple social media platforms (Twitter, Instagram, Facebook) and provides detailed insights, engagement metrics, audience demographics, and content performance analysis. Features automated reporting and custom dashboard creation.",
+    "technologies": ["Python", "Django", "React", "PostgreSQL", "Celery", "Docker"],
+    "image": "/images/projects/analytics.jpg",
+    "githubUrl": "https://github.com/yourusername/social-analytics",
+    "featured": true,
+    "category": "Data Analytics",
+    "startDate": "2022-09-01",
+    "endDate": "2023-02-28"
+  },
+  {
+    "id": "project-5",
+    "title": "Portfolio Website Builder",
+    "description": "No-code portfolio website builder with drag-and-drop interface",
+    "longDescription": "Developed a user-friendly portfolio website builder that allows users to create professional portfolios without coding knowledge. Features include drag-and-drop interface, customizable templates, SEO optimization, custom domain support, and analytics integration.",
+    "technologies": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS S3"],
+    "image": "/images/projects/portfolio-builder.jpg",
+    "liveUrl": "https://example-builder.com",
+    "githubUrl": "https://github.com/yourusername/portfolio-builder",
+    "featured": false,
+    "category": "Web Development",
+    "startDate": "2023-12-01"
+  }
+]

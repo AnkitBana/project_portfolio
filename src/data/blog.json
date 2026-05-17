@@ -1,0 +1,80 @@
+[
+  {
+    "id": "blog-1",
+    "title": "Building Scalable Web Applications with Next.js",
+    "excerpt": "Learn how to build performant and scalable web applications using Next.js 14 and modern best practices.",
+    "content": "Next.js has become one of the most popular React frameworks for building modern web applications. In this comprehensive guide, we'll explore the key features that make Next.js ideal for scalable applications...",
+    "author": "Your Name",
+    "publishedAt": "2024-01-15",
+    "tags": ["Next.js", "React", "Web Development", "Performance"],
+    "category": "Web Development",
+    "image": "/images/blog/nextjs-scalable.jpg",
+    "readTime": 8,
+    "featured": true
+  },
+  {
+    "id": "blog-2",
+    "title": "TypeScript Best Practices for Large Projects",
+    "excerpt": "Discover essential TypeScript patterns and practices that will help you maintain large-scale applications.",
+    "content": "TypeScript has revolutionized how we write JavaScript applications. When working on large projects, following best practices becomes crucial for maintainability and team collaboration...",
+    "author": "Your Name",
+    "publishedAt": "2024-01-10",
+    "tags": ["TypeScript", "JavaScript", "Best Practices", "Software Engineering"],
+    "category": "Programming",
+    "image": "/images/blog/typescript-practices.jpg",
+    "readTime": 10,
+    "featured": true
+  },
+  {
+    "id": "blog-3",
+    "title": "Docker and Containerization: A Practical Guide",
+    "excerpt": "Master Docker containerization and learn how to deploy applications efficiently in any environment.",
+    "content": "Docker has transformed the way we deploy and manage applications. This guide will walk you through the fundamentals of containerization and show you how to leverage Docker for your projects...",
+    "author": "Your Name",
+    "publishedAt": "2024-01-05",
+    "tags": ["Docker", "DevOps", "Containerization", "Deployment"],
+    "category": "DevOps",
+    "image": "/images/blog/docker-guide.jpg",
+    "readTime": 12,
+    "featured": false
+  },
+  {
+    "id": "blog-4",
+    "title": "State Management in React: Redux vs Context API",
+    "excerpt": "A comprehensive comparison of state management solutions in React applications.",
+    "content": "Choosing the right state management solution is crucial for React applications. In this article, we'll compare Redux and Context API, exploring their strengths, weaknesses, and use cases...",
+    "author": "Your Name",
+    "publishedAt": "2023-12-28",
+    "tags": ["React", "Redux", "State Management", "Context API"],
+    "category": "Web Development",
+    "image": "/images/blog/state-management.jpg",
+    "readTime": 9,
+    "featured": false
+  },
+  {
+    "id": "blog-5",
+    "title": "Building RESTful APIs with Node.js and Express",
+    "excerpt": "Learn how to design and implement robust RESTful APIs using Node.js and Express framework.",
+    "content": "RESTful APIs are the backbone of modern web applications. This tutorial will guide you through creating a production-ready API with proper authentication, validation, and error handling...",
+    "author": "Your Name",
+    "publishedAt": "2023-12-20",
+    "tags": ["Node.js", "Express", "REST API", "Backend"],
+    "category": "Backend Development",
+    "image": "/images/blog/nodejs-api.jpg",
+    "readTime": 15,
+    "featured": true
+  },
+  {
+    "id": "blog-6",
+    "title": "CSS Grid vs Flexbox: When to Use Each",
+    "excerpt": "Understanding the differences between CSS Grid and Flexbox and when to use each layout system.",
+    "content": "CSS Grid and Flexbox are powerful layout systems that have revolutionized web design. While they can sometimes be used interchangeably, understanding their strengths helps you choose the right tool...",
+    "author": "Your Name",
+    "publishedAt": "2023-12-15",
+    "tags": ["CSS", "Grid", "Flexbox", "Web Design"],
+    "category": "Web Design",
+    "image": "/images/blog/css-layouts.jpg",
+    "readTime": 7,
+    "featured": false
+  }
+]

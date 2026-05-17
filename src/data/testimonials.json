@@ -1,0 +1,60 @@
+[
+  {
+    "id": "testimonial-1",
+    "name": "Sarah Johnson",
+    "role": "Product Manager",
+    "company": "TechCorp Inc",
+    "content": "Working with this developer was an absolute pleasure. They delivered high-quality code on time and exceeded our expectations. Their attention to detail and problem-solving skills are exceptional.",
+    "rating": 5,
+    "image": "/images/testimonials/sarah.jpg",
+    "date": "2023-11-15"
+  },
+  {
+    "id": "testimonial-2",
+    "name": "Michael Chen",
+    "role": "CTO",
+    "company": "StartupXYZ",
+    "content": "An outstanding developer who brings both technical expertise and creative solutions to the table. They helped us build a scalable platform that has been crucial to our growth.",
+    "rating": 5,
+    "image": "/images/testimonials/michael.jpg",
+    "date": "2023-10-20"
+  },
+  {
+    "id": "testimonial-3",
+    "name": "Emily Rodriguez",
+    "role": "Lead Designer",
+    "company": "Creative Studios",
+    "content": "Great collaboration skills and excellent communication throughout the project. They understood our design vision and implemented it perfectly with clean, maintainable code.",
+    "rating": 5,
+    "image": "/images/testimonials/emily.jpg",
+    "date": "2023-09-05"
+  },
+  {
+    "id": "testimonial-4",
+    "name": "David Thompson",
+    "role": "Founder",
+    "company": "E-Commerce Solutions",
+    "content": "Highly skilled developer with deep knowledge of modern web technologies. They built our e-commerce platform from scratch and it's been running smoothly ever since.",
+    "rating": 5,
+    "date": "2023-08-12"
+  },
+  {
+    "id": "testimonial-5",
+    "name": "Lisa Anderson",
+    "role": "Project Manager",
+    "company": "Digital Agency",
+    "content": "Professional, reliable, and talented. They consistently delivered quality work and were always available to address any concerns. Would definitely work with them again.",
+    "rating": 5,
+    "image": "/images/testimonials/lisa.jpg",
+    "date": "2023-07-28"
+  },
+  {
+    "id": "testimonial-6",
+    "name": "James Wilson",
+    "role": "Senior Developer",
+    "company": "Tech Innovations",
+    "content": "A pleasure to collaborate with on complex projects. Their code is clean, well-documented, and follows best practices. They're also great at mentoring junior developers.",
+    "rating": 5,
+    "date": "2023-06-15"
+  }
+]
