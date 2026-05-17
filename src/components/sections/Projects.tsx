@@ -1,46 +1,122 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import type { Project } from '@/types'
+import { useState } from 'react'
+import { FaGithub, FaExternalLinkAlt, FaDocker, FaAws } from 'react-icons/fa'
+import { SiKubernetes, SiTerraform, SiSap, SiTricentis, SiJenkins, SiPrometheus } from 'react-icons/si'
 
 export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([])
-  const [loading, setLoading] = useState(true)
-  const [filter, setFilter] = useState<string>('all')
+  const [activeFilter, setActiveFilter] = useState('all')
 
-  useEffect(() => {
-    // Load projects data
-    fetch('/data/projects.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(data)
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.error('Error loading projects:', error)
-        setLoading(false)
-      })
-  }, [])
+  const projects = [
+    {
+      id: 1,
+      title: 'SAP S/4HANA Cloud Migration',
+      description: 'Led the migration of legacy SAP ECC system to S/4HANA Cloud, implementing modern DevOps practices and automated testing frameworks.',
+      image: '/images/projects/sap-migration.jpg',
+      category: 'sap',
+      tags: ['SAP S/4HANA', 'Cloud Migration', 'ABAP', 'Fiori'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        'Reduced deployment time by 60%',
+        'Implemented CI/CD pipeline',
+        'Zero-downtime migration strategy',
+      ],
+      icon: <SiSap size={24} />,
+    },
+    {
+      id: 2,
+      title: 'Kubernetes Multi-Cluster Management',
+      description: 'Designed and implemented a multi-cluster Kubernetes infrastructure with automated scaling, monitoring, and disaster recovery capabilities.',
+      image: '/images/projects/k8s-cluster.jpg',
+      category: 'devops',
+      tags: ['Kubernetes', 'Docker', 'Helm', 'Prometheus', 'Grafana'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        'Managed 50+ microservices',
+        '99.9% uptime achieved',
+        'Auto-scaling implementation',
+      ],
+      icon: <SiKubernetes size={24} />,
+    },
+    {
+      id: 3,
+      title: 'TOSCA Test Automation Framework',
+      description: 'Developed comprehensive test automation framework using TOSCA for SAP applications, reducing manual testing efforts by 80%.',
+      image: '/images/projects/tosca-framework.jpg',
+      category: 'automation',
+      tags: ['TOSCA', 'CBTA', 'SAP Testing', 'API Testing'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        '500+ automated test cases',
+        '80% reduction in testing time',
+        'Integrated with CI/CD pipeline',
+      ],
+      icon: <SiTricentis size={24} />,
+    },
+    {
+      id: 4,
+      title: 'AWS Infrastructure as Code',
+      description: 'Built scalable AWS infrastructure using Terraform and Ansible, implementing best practices for security, cost optimization, and high availability.',
+      image: '/images/projects/aws-terraform.jpg',
+      category: 'devops',
+      tags: ['AWS', 'Terraform', 'Ansible', 'CloudFormation'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        'Multi-region deployment',
+        '40% cost reduction',
+        'Automated disaster recovery',
+      ],
+      icon: <FaAws size={24} />,
+    },
+    {
+      id: 5,
+      title: 'CI/CD Pipeline Optimization',
+      description: 'Optimized Jenkins-based CI/CD pipelines for SAP and cloud applications, implementing parallel execution and intelligent caching strategies.',
+      image: '/images/projects/cicd-pipeline.jpg',
+      category: 'devops',
+      tags: ['Jenkins', 'GitLab CI', 'Docker', 'Kubernetes'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        '70% faster build times',
+        'Parallel test execution',
+        'Automated rollback mechanism',
+      ],
+      icon: <SiJenkins size={24} />,
+    },
+    {
+      id: 6,
+      title: 'Observability Platform',
+      description: 'Implemented comprehensive monitoring and observability platform using Prometheus, Grafana, and ELK stack for distributed systems.',
+      image: '/images/projects/monitoring.jpg',
+      category: 'devops',
+      tags: ['Prometheus', 'Grafana', 'ELK', 'Monitoring'],
+      github: 'https://github.com/AnkitBana',
+      demo: null,
+      highlights: [
+        'Real-time alerting system',
+        'Custom dashboards',
+        'Log aggregation and analysis',
+      ],
+      icon: <SiPrometheus size={24} />,
+    },
+  ]
 
-  if (loading) {
-    return (
-      <section id="projects" className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center">Loading projects...</div>
-        </div>
-      </section>
-    )
-  }
+  const filters = [
+    { id: 'all', label: 'All Projects' },
+    { id: 'sap', label: 'SAP' },
+    { id: 'devops', label: 'DevOps' },
+    { id: 'automation', label: 'Automation' },
+  ]
 
-  // Get unique categories
-  const categories = ['all', ...Array.from(new Set(projects.map((p) => p.category)))]
-
-  // Filter projects
-  const filteredProjects = filter === 'all' 
+  const filteredProjects = activeFilter === 'all' 
     ? projects 
-    : projects.filter((p) => p.category === filter)
+    : projects.filter(project => project.category === activeFilter)
 
   return (
     <section id="projects" className="section-padding bg-white">
@@ -53,116 +129,103 @@ export default function Projects() {
         >
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
-            Some of my recent work
+            Showcasing my work in SAP, DevOps, and Test Automation
           </p>
         </motion.div>
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mt-12 mb-8"
+          className="flex flex-wrap justify-center gap-4 mt-12 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {categories.map((category) => (
+          {filters.map((filter) => (
             <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 capitalize ${
-                filter === category
-                  ? 'bg-primary-600 text-white shadow-lg'
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                activeFilter === filter.id
+                  ? 'bg-primary-600 text-white shadow-lg scale-105'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              {category}
+              {filter.label}
             </button>
           ))}
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="card overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+              className="card overflow-hidden group hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Project Image */}
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-secondary-100">
-                    <span className="text-4xl font-bold text-primary-600">
-                      {project.title.charAt(0)}
-                    </span>
-                  </div>
-                )}
-                {project.featured && (
-                  <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Featured
-                  </div>
-                )}
+              {/* Project Image/Icon */}
+              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center overflow-hidden">
+                <div className="text-primary-600 transform group-hover:scale-110 transition-transform duration-300">
+                  {project.icon}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
+                <p className="text-gray-600 mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
-                {/* Technologies */}
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech) => (
+                  {project.tags.slice(0, 3).map((tag, tagIndex) => (
                     <span
-                      key={tech}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                      key={tagIndex}
+                      className="px-3 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-full"
                     >
-                      {tech}
+                      {tag}
                     </span>
                   ))}
-                  {project.technologies.length > 3 && (
-                    <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                      +{project.technologies.length - 3}
-                    </span>
-                  )}
                 </div>
 
+                {/* Highlights */}
+                <ul className="space-y-2 mb-4">
+                  {project.highlights.map((highlight, hIndex) => (
+                    <li key={hIndex} className="text-sm text-gray-600 flex items-start">
+                      <span className="text-primary-600 mr-2">✓</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+
                 {/* Links */}
-                <div className="flex gap-4">
-                  {project.githubUrl && (
+                <div className="flex gap-4 pt-4 border-t border-gray-100">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                  >
+                    <FaGithub size={20} />
+                    <span className="text-sm font-medium">Code</span>
+                  </a>
+                  {project.demo && (
                     <a
-                      href={project.githubUrl}
+                      href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
-                      aria-label={`View ${project.title} on GitHub`}
-                    >
-                      <FaGithub size={20} />
-                      <span className="text-sm font-medium">Code</span>
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
-                      aria-label={`View ${project.title} live demo`}
                     >
                       <FaExternalLinkAlt size={18} />
-                      <span className="text-sm font-medium">Live Demo</span>
+                      <span className="text-sm font-medium">Demo</span>
                     </a>
                   )}
                 </div>
@@ -171,11 +234,27 @@ export default function Projects() {
           ))}
         </div>
 
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-600 text-lg">No projects found in this category.</p>
-          </div>
-        )}
+        {/* GitHub CTA */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <p className="text-gray-600 mb-6">
+            Want to see more? Check out my GitHub profile for additional projects and contributions.
+          </p>
+          <a
+            href="https://github.com/AnkitBana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            <FaGithub size={20} />
+            View GitHub Profile
+          </a>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,52 +1,126 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { FaClock, FaCalendar, FaArrowRight } from 'react-icons/fa'
-import type { BlogPost } from '@/types'
+import { useState } from 'react'
+import { FaCalendar, FaClock, FaArrowRight, FaTag } from 'react-icons/fa'
 
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([])
-  const [loading, setLoading] = useState(true)
+  const [activeCategory, setActiveCategory] = useState('all')
 
-  useEffect(() => {
-    // Load blog posts data
-    fetch('/data/blog.json')
-      .then((res) => res.json())
-      .then((data) => {
-        // Show only featured posts or latest 3
-        const featuredPosts = data.filter((post: BlogPost) => post.featured).slice(0, 3)
-        setPosts(featuredPosts.length > 0 ? featuredPosts : data.slice(0, 3))
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.error('Error loading blog posts:', error)
-        setLoading(false)
-      })
-  }, [])
+  const blogPosts = [
+    {
+      id: 1,
+      title: 'Mastering Kubernetes: A Complete Guide to Container Orchestration',
+      excerpt: 'Deep dive into Kubernetes architecture, best practices, and real-world deployment strategies for production environments.',
+      category: 'devops',
+      date: '2024-03-15',
+      readTime: '12 min read',
+      image: '/images/blog/kubernetes-guide.jpg',
+      tags: ['Kubernetes', 'Docker', 'DevOps', 'Cloud'],
+      featured: true,
+    },
+    {
+      id: 2,
+      title: 'SAP S/4HANA Migration: Lessons Learned from the Trenches',
+      excerpt: 'Practical insights and strategies for successful SAP S/4HANA migration projects, including common pitfalls and how to avoid them.',
+      category: 'sap',
+      date: '2024-03-10',
+      readTime: '10 min read',
+      image: '/images/blog/sap-migration.jpg',
+      tags: ['SAP', 'S/4HANA', 'Migration', 'ERP'],
+      featured: true,
+    },
+    {
+      id: 3,
+      title: 'Building Robust CI/CD Pipelines with Jenkins and Docker',
+      excerpt: 'Step-by-step guide to creating efficient, scalable CI/CD pipelines that reduce deployment time and increase reliability.',
+      category: 'devops',
+      date: '2024-03-05',
+      readTime: '15 min read',
+      image: '/images/blog/cicd-pipeline.jpg',
+      tags: ['Jenkins', 'Docker', 'CI/CD', 'Automation'],
+      featured: false,
+    },
+    {
+      id: 4,
+      title: 'Test Automation with TOSCA: Best Practices and Tips',
+      excerpt: 'Comprehensive guide to implementing effective test automation strategies using TOSCA for enterprise applications.',
+      category: 'automation',
+      date: '2024-02-28',
+      readTime: '8 min read',
+      image: '/images/blog/tosca-automation.jpg',
+      tags: ['TOSCA', 'Testing', 'Automation', 'QA'],
+      featured: false,
+    },
+    {
+      id: 5,
+      title: 'Infrastructure as Code: Terraform vs CloudFormation',
+      excerpt: 'Detailed comparison of Terraform and AWS CloudFormation, helping you choose the right IaC tool for your projects.',
+      category: 'devops',
+      date: '2024-02-20',
+      readTime: '11 min read',
+      image: '/images/blog/iac-comparison.jpg',
+      tags: ['Terraform', 'AWS', 'IaC', 'Cloud'],
+      featured: false,
+    },
+    {
+      id: 6,
+      title: 'Monitoring Microservices: Prometheus and Grafana Setup',
+      excerpt: 'Learn how to set up comprehensive monitoring for microservices architecture using Prometheus and Grafana.',
+      category: 'devops',
+      date: '2024-02-15',
+      readTime: '9 min read',
+      image: '/images/blog/monitoring-setup.jpg',
+      tags: ['Prometheus', 'Grafana', 'Monitoring', 'Observability'],
+      featured: false,
+    },
+    {
+      id: 7,
+      title: 'SAP Fiori Development: Modern UI/UX Best Practices',
+      excerpt: 'Explore modern approaches to SAP Fiori development, including responsive design patterns and performance optimization.',
+      category: 'sap',
+      date: '2024-02-10',
+      readTime: '10 min read',
+      image: '/images/blog/fiori-development.jpg',
+      tags: ['SAP Fiori', 'UI5', 'UX', 'Development'],
+      featured: false,
+    },
+    {
+      id: 8,
+      title: 'Docker Security: Hardening Your Containers',
+      excerpt: 'Essential security practices for Docker containers, from image scanning to runtime protection and network policies.',
+      category: 'devops',
+      date: '2024-02-05',
+      readTime: '13 min read',
+      image: '/images/blog/docker-security.jpg',
+      tags: ['Docker', 'Security', 'DevSecOps', 'Containers'],
+      featured: false,
+    },
+    {
+      id: 9,
+      title: 'API Testing Strategies for Modern Applications',
+      excerpt: 'Comprehensive guide to API testing methodologies, tools, and automation frameworks for reliable software delivery.',
+      category: 'automation',
+      date: '2024-01-30',
+      readTime: '12 min read',
+      image: '/images/blog/api-testing.jpg',
+      tags: ['API Testing', 'Automation', 'REST', 'Testing'],
+      featured: false,
+    },
+  ]
 
-  if (loading) {
-    return (
-      <section id="blog" className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center">Loading blog posts...</div>
-        </div>
-      </section>
-    )
-  }
+  const categories = [
+    { id: 'all', label: 'All Posts', count: blogPosts.length },
+    { id: 'devops', label: 'DevOps', count: blogPosts.filter(p => p.category === 'devops').length },
+    { id: 'sap', label: 'SAP', count: blogPosts.filter(p => p.category === 'sap').length },
+    { id: 'automation', label: 'Automation', count: blogPosts.filter(p => p.category === 'automation').length },
+  ]
 
-  if (posts.length === 0) {
-    return null // Don't show section if no posts
-  }
+  const filteredPosts = activeCategory === 'all'
+    ? blogPosts
+    : blogPosts.filter(post => post.category === activeCategory)
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    })
-  }
+  const featuredPost = blogPosts.find(post => post.featured)
 
   return (
     <section id="blog" className="section-padding bg-gray-50">
@@ -59,50 +133,132 @@ export default function Blog() {
         >
           <h2 className="section-title">Latest Blog Posts</h2>
           <p className="section-subtitle">
-            Thoughts, tutorials, and insights
+            Insights, tutorials, and thoughts on technology
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {posts.map((post, index) => (
+        {/* Featured Post */}
+        {featuredPost && (
+          <motion.div
+            className="mt-12 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="card overflow-hidden group hover:shadow-2xl transition-all duration-300">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Featured Image */}
+                <div className="relative h-64 md:h-auto bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span className="absolute top-4 left-4 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-full">
+                    Featured
+                  </span>
+                </div>
+
+                {/* Featured Content */}
+                <div className="p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span className="flex items-center gap-2">
+                      <FaCalendar />
+                      {new Date(featuredPost.date).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <FaClock />
+                      {featuredPost.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+                    {featuredPost.title}
+                  </h3>
+
+                  <p className="text-gray-600 mb-6">
+                    {featuredPost.excerpt}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {featuredPost.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button className="btn-primary inline-flex items-center gap-2 w-fit">
+                    Read More
+                    <FaArrowRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Category Filter */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === category.id
+                  ? 'bg-primary-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              {category.label} ({category.count})
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Blog Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.slice(0, 6).map((post, index) => (
             <motion.article
               key={post.id}
-              className="card overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+              className="card overflow-hidden group hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Post Image */}
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                {post.image ? (
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-secondary-100">
-                    <span className="text-4xl font-bold text-primary-600">
-                      {post.title.charAt(0)}
-                    </span>
-                  </div>
-                )}
-                {post.featured && (
-                  <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Featured
-                  </div>
-                )}
+              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Post Content */}
               <div className="p-6">
-                {/* Category */}
-                <span className="inline-block px-3 py-1 bg-primary-100 text-primary-600 text-sm font-semibold rounded-full mb-3 capitalize">
-                  {post.category}
-                </span>
+                <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                  <span className="flex items-center gap-1">
+                    <FaCalendar />
+                    {new Date(post.date).toLocaleDateString('en-US', { 
+                      month: 'short', 
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <FaClock />
+                    {post.readTime}
+                  </span>
+                </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300 line-clamp-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300">
                   {post.title}
                 </h3>
 
@@ -110,38 +266,21 @@ export default function Blog() {
                   {post.excerpt}
                 </p>
 
-                {/* Meta Info */}
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-1">
-                    <FaCalendar size={14} />
-                    <span>{formatDate(post.publishedAt)}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <FaClock size={14} />
-                    <span>{post.readTime} min read</span>
-                  </div>
-                </div>
-
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.slice(0, 3).map((tag) => (
+                  {post.tags.slice(0, 2).map((tag, tagIndex) => (
                     <span
-                      key={tag}
-                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
+                      key={tagIndex}
+                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded"
                     >
-                      #{tag}
+                      {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Read More Link */}
-                <a
-                  href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200"
-                >
-                  Read More
-                  <FaArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-                </a>
+                <button className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                  Read Article
+                  <FaArrowRight />
+                </button>
               </div>
             </motion.article>
           ))}
@@ -149,19 +288,15 @@ export default function Blog() {
 
         {/* View All Button */}
         <motion.div
-          className="text-center mt-12"
+          className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <a
-            href="/blog"
-            className="btn-outline inline-flex items-center gap-2"
-          >
+          <button className="btn-outline">
             View All Posts
-            <FaArrowRight size={16} />
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

@@ -1,46 +1,110 @@
 [
   {
     "id": "skill-1",
-    "name": "React",
-    "category": "frontend",
-    "proficiency": 95,
-    "icon": "FaReact",
+    "name": "SAP",
+    "category": "other",
+    "proficiency": 90,
+    "icon": "SiSap",
     "yearsOfExperience": 4
   },
   {
     "id": "skill-2",
-    "name": "Next.js",
-    "category": "frontend",
-    "proficiency": 90,
-    "icon": "SiNextdotjs",
-    "yearsOfExperience": 3
+    "name": "Linux",
+    "category": "tools",
+    "proficiency": 88,
+    "icon": "FaLinux",
+    "yearsOfExperience": 
   },
   {
     "id": "skill-3",
-    "name": "TypeScript",
-    "category": "frontend",
-    "proficiency": 88,
-    "icon": "SiTypescript",
+    "name": "Docker",
+    "category": "tools",
+    "proficiency": 85,
+    "icon": "FaDocker",
     "yearsOfExperience": 3
   },
   {
     "id": "skill-4",
+    "name": "Kubernetes",
+    "category": "tools",
+    "proficiency": 82,
+    "icon": "SiKubernetes",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-5",
+    "name": "CBTA",
+    "category": "other",
+    "proficiency": 87,
+    "icon": "FaCogs",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-6",
+    "name": "TOSCA",
+    "category": "other",
+    "proficiency": 85,
+    "icon": "FaRobot",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-7",
+    "name": "React",
+    "category": "frontend",
+    "proficiency": 90,
+    "icon": "FaReact",
+    "yearsOfExperience": 4
+  },
+  {
+    "id": "skill-8",
+    "name": "Next.js",
+    "category": "frontend",
+    "proficiency": 88,
+    "icon": "SiNextdotjs",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-9",
+    "name": "TypeScript",
+    "category": "frontend",
+    "proficiency": 85,
+    "icon": "SiTypescript",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-10",
     "name": "JavaScript",
     "category": "frontend",
-    "proficiency": 95,
+    "proficiency": 92,
     "icon": "SiJavascript",
     "yearsOfExperience": 5
   },
   {
-    "id": "skill-5",
+    "id": "skill-11",
     "name": "Tailwind CSS",
     "category": "frontend",
-    "proficiency": 92,
+    "proficiency": 88,
     "icon": "SiTailwindcss",
     "yearsOfExperience": 2
   },
   {
-    "id": "skill-6",
+    "id": "skill-12",
+    "name": "HTML5",
+    "category": "frontend",
+    "proficiency": 95,
+    "icon": "FaHtml5",
+    "yearsOfExperience": 6
+  },
+  {
+    "id": "skill-13",
+    "name": "CSS3",
+    "category": "frontend",
+    "proficiency": 93,
+    "icon": "FaCss3Alt",
+    "yearsOfExperience": 6
+  },
+  {
+    "id": "skill-14",
     "name": "Node.js",
     "category": "backend",
     "proficiency": 85,
@@ -48,15 +112,15 @@
     "yearsOfExperience": 4
   },
   {
-    "id": "skill-7",
+    "id": "skill-15",
     "name": "Express.js",
     "category": "backend",
-    "proficiency": 87,
+    "proficiency": 83,
     "icon": "SiExpress",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 3
   },
   {
-    "id": "skill-8",
+    "id": "skill-16",
     "name": "Python",
     "category": "backend",
     "proficiency": 80,
@@ -64,15 +128,31 @@
     "yearsOfExperience": 3
   },
   {
-    "id": "skill-9",
-    "name": "Django",
+    "id": "skill-17",
+    "name": "Java",
     "category": "backend",
-    "proficiency": 75,
-    "icon": "SiDjango",
+    "proficiency": 78,
+    "icon": "FaJava",
     "yearsOfExperience": 2
   },
   {
-    "id": "skill-10",
+    "id": "skill-18",
+    "name": "REST API",
+    "category": "backend",
+    "proficiency": 90,
+    "icon": "FaServer",
+    "yearsOfExperience": 4
+  },
+  {
+    "id": "skill-19",
+    "name": "GraphQL",
+    "category": "backend",
+    "proficiency": 75,
+    "icon": "SiGraphql",
+    "yearsOfExperience": 2
+  },
+  {
+    "id": "skill-20",
     "name": "MongoDB",
     "category": "database",
     "proficiency": 85,
@@ -80,7 +160,7 @@
     "yearsOfExperience": 3
   },
   {
-    "id": "skill-11",
+    "id": "skill-21",
     "name": "PostgreSQL",
     "category": "database",
     "proficiency": 82,
@@ -88,59 +168,75 @@
     "yearsOfExperience": 3
   },
   {
-    "id": "skill-12",
+    "id": "skill-22",
+    "name": "MySQL",
+    "category": "database",
+    "proficiency": 88,
+    "icon": "SiMysql",
+    "yearsOfExperience": 4
+  },
+  {
+    "id": "skill-23",
     "name": "Redis",
     "category": "database",
-    "proficiency": 70,
+    "proficiency": 75,
     "icon": "SiRedis",
     "yearsOfExperience": 2
   },
   {
-    "id": "skill-13",
-    "name": "Docker",
-    "category": "tools",
-    "proficiency": 80,
-    "icon": "FaDocker",
-    "yearsOfExperience": 2
-  },
-  {
-    "id": "skill-14",
+    "id": "skill-24",
     "name": "Git",
     "category": "tools",
-    "proficiency": 90,
+    "proficiency": 92,
     "icon": "FaGitAlt",
     "yearsOfExperience": 5
   },
   {
-    "id": "skill-15",
+    "id": "skill-25",
+    "name": "GitHub",
+    "category": "tools",
+    "proficiency": 90,
+    "icon": "FaGithub",
+    "yearsOfExperience": 5
+  },
+  {
+    "id": "skill-26",
     "name": "AWS",
     "category": "tools",
-    "proficiency": 75,
+    "proficiency": 80,
     "icon": "FaAws",
     "yearsOfExperience": 2
   },
   {
-    "id": "skill-16",
-    "name": "GraphQL",
-    "category": "backend",
+    "id": "skill-27",
+    "name": "CI/CD",
+    "category": "tools",
+    "proficiency": 83,
+    "icon": "FaCodeBranch",
+    "yearsOfExperience": 3
+  },
+  {
+    "id": "skill-28",
+    "name": "Jenkins",
+    "category": "tools",
     "proficiency": 78,
-    "icon": "SiGraphql",
+    "icon": "SiJenkins",
     "yearsOfExperience": 2
   },
   {
-    "id": "skill-17",
-    "name": "REST API",
-    "category": "backend",
-    "proficiency": 92,
-    "icon": "FaServer",
+    "id": "skill-29",
+    "name": "Agile/Scrum",
+    "category": "other",
+    "proficiency": 88,
+    "icon": "FaTasks",
     "yearsOfExperience": 4
   },
   {
-    "id": "skill-18",
-    "name": "Vue.js",
-    "category": "frontend",
-    "proficiency": 75,
-    "icon": "FaVuejs",
-    "yearsOfExperience": 2
+    "id": "skill-30",
+    "name": "Test Automation",
+    "category": "other",
+    "proficiency": 86,
+    "icon": "FaCheckCircle",
+    "yearsOfExperience": 3
   }
 ]

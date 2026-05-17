@@ -1,45 +1,66 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import type { Skill } from '@/types'
+import { FaDocker, FaAws, FaGitAlt, FaJenkins } from 'react-icons/fa'
+import { SiKubernetes, SiTerraform, SiAnsible, SiPrometheus, SiGrafana, SiSap, SiTricentis } from 'react-icons/si'
+import { DiJenkins } from 'react-icons/di'
 
 export default function Skills() {
-  const [skills, setSkills] = useState<Skill[]>([])
-  const [loading, setLoading] = useState(true)
+  const skillCategories = [
+    {
+      title: 'SAP Technologies',
+      icon: <SiSap className="w-8 h-8" />,
+      skills: [
+        { name: 'SAP S/4HANA', level: 85, color: 'bg-blue-500' },
+        { name: 'SAP ABAP', level: 80, color: 'bg-blue-600' },
+        { name: 'SAP Fiori', level: 75, color: 'bg-blue-400' },
+        { name: 'SAP BTP', level: 70, color: 'bg-blue-700' },
+      ],
+    },
+    {
+      title: 'DevOps & Cloud',
+      icon: <FaDocker className="w-8 h-8" />,
+      skills: [
+        { name: 'Docker', level: 90, color: 'bg-cyan-500' },
+        { name: 'Kubernetes', level: 85, color: 'bg-blue-500' },
+        { name: 'AWS', level: 80, color: 'bg-orange-500' },
+        { name: 'Jenkins', level: 85, color: 'bg-red-500' },
+        { name: 'Terraform', level: 75, color: 'bg-purple-500' },
+        { name: 'Ansible', level: 70, color: 'bg-red-600' },
+      ],
+    },
+    {
+      title: 'Test Automation',
+      icon: <SiTricentis className="w-8 h-8" />,
+      skills: [
+        { name: 'TOSCA', level: 90, color: 'bg-green-500' },
+        { name: 'CBTA', level: 85, color: 'bg-green-600' },
+        { name: 'Selenium', level: 80, color: 'bg-green-400' },
+        { name: 'API Testing', level: 85, color: 'bg-teal-500' },
+      ],
+    },
+    {
+      title: 'Monitoring & Observability',
+      icon: <SiPrometheus className="w-8 h-8" />,
+      skills: [
+        { name: 'Prometheus', level: 80, color: 'bg-orange-600' },
+        { name: 'Grafana', level: 85, color: 'bg-orange-500' },
+        { name: 'ELK Stack', level: 75, color: 'bg-yellow-500' },
+        { name: 'Splunk', level: 70, color: 'bg-green-700' },
+      ],
+    },
+  ]
 
-  useEffect(() => {
-    // Load skills data
-    fetch('/data/skills.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setSkills(data)
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.error('Error loading skills:', error)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) {
-    return (
-      <section id="skills" className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center">Loading skills...</div>
-        </div>
-      </section>
-    )
-  }
-
-  // Group skills by category
-  const groupedSkills = skills.reduce((acc, skill) => {
-    if (!acc[skill.category]) {
-      acc[skill.category] = []
-    }
-    acc[skill.category].push(skill)
-    return acc
-  }, {} as Record<string, Skill[]>)
+  const tools = [
+    { name: 'Git', icon: <FaGitAlt size={32} />, color: 'text-orange-600' },
+    { name: 'Docker', icon: <FaDocker size={32} />, color: 'text-cyan-500' },
+    { name: 'Kubernetes', icon: <SiKubernetes size={32} />, color: 'text-blue-600' },
+    { name: 'Jenkins', icon: <FaJenkins size={32} />, color: 'text-red-600' },
+    { name: 'Terraform', icon: <SiTerraform size={32} />, color: 'text-purple-600' },
+    { name: 'Ansible', icon: <SiAnsible size={32} />, color: 'text-red-700' },
+    { name: 'AWS', icon: <FaAws size={32} />, color: 'text-orange-500' },
+    { name: 'Grafana', icon: <SiGrafana size={32} />, color: 'text-orange-600' },
+  ]
 
   return (
     <section id="skills" className="section-padding bg-gray-50">
@@ -50,64 +71,112 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="section-title">Skills & Technologies</h2>
+          <h2 className="section-title">Technical Skills</h2>
           <p className="section-subtitle">
-            Tools and technologies I work with
+            My expertise across various technologies and tools
           </p>
         </motion.div>
 
-        <div className="mt-12 space-y-12">
-          {Object.entries(groupedSkills).map(([category, categorySkills], categoryIndex) => (
+        {/* Skill Categories */}
+        <div className="grid md:grid-cols-2 gap-8 mt-12">
+          {skillCategories.map((category, categoryIndex) => (
             <motion.div
-              key={category}
+              key={categoryIndex}
+              className="card p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 capitalize">
-                {category}
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {categorySkills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    className="card p-6 hover:shadow-lg transition-all duration-300 group"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="text-center">
-                      {/* Icon placeholder - you can add actual icons here */}
-                      <div className="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
-                        <span className="text-2xl font-bold text-primary-600">
-                          {skill.name.charAt(0)}
-                        </span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-primary-600">{category.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {category.title}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-700 font-medium">
                         {skill.name}
-                      </h4>
-                      <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <motion.div
-                          className="bg-primary-600 h-2 rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.proficiency}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.5 + index * 0.05 }}
-                        />
-                      </div>
-                      <p className="text-sm text-gray-600">
-                        {skill.proficiency}%
-                      </p>
+                      </span>
+                      <span className="text-gray-600">{skill.level}%</span>
                     </div>
-                  </motion.div>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                      <motion.div
+                        className={`h-full ${skill.color} rounded-full`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.2 + skillIndex * 0.1 }}
+                      />
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Tools & Technologies */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Tools & Technologies
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
+            {tools.map((tool, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center gap-2 p-4 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className={tool.color}>{tool.icon}</div>
+                <span className="text-sm font-medium text-gray-700 text-center">
+                  {tool.name}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Certifications */}
+        <motion.div
+          className="mt-16 card p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Certifications & Achievements
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+              <div className="text-3xl font-bold text-blue-600 mb-2">AWS</div>
+              <p className="text-gray-700">Certified Solutions Architect</p>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+              <div className="text-3xl font-bold text-green-600 mb-2">TOSCA</div>
+              <p className="text-gray-700">Certified Test Automation Specialist</p>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+              <div className="text-3xl font-bold text-purple-600 mb-2">SAP</div>
+              <p className="text-gray-700">Certified Development Associate</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

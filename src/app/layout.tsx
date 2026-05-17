@@ -1,28 +1,30 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Your Name',
-  description: 'Professional portfolio showcasing my projects, skills, and experience',
-  keywords: ['portfolio', 'web developer', 'software engineer', 'projects'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  title: 'Ankit Kumar Gautam - SAP Consultant | DevOps Engineer | Test Automation Specialist',
+  description: 'Professional portfolio of Ankit Kumar Gautam showcasing expertise in SAP, DevOps, Kubernetes, Docker, TOSCA, and Test Automation',
+  keywords: ['SAP Consultant', 'DevOps Engineer', 'Test Automation', 'TOSCA', 'Kubernetes', 'Docker', 'AWS', 'Jenkins', 'Terraform', 'Ankit Kumar Gautam'],
+  authors: [{ name: 'Ankit Kumar Gautam' }],
+  creator: 'Ankit Kumar Gautam',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    title: 'Portfolio | Your Name',
-    description: 'Professional portfolio showcasing my projects, skills, and experience',
-    siteName: 'Portfolio',
+    title: 'Ankit Kumar Gautam - Portfolio',
+    description: 'SAP Consultant | DevOps Engineer | Test Automation Specialist',
+    siteName: 'Ankit Kumar Gautam Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | Your Name',
-    description: 'Professional portfolio showcasing my projects, skills, and experience',
-    creator: '@yourusername',
+    title: 'Ankit Kumar Gautam - Portfolio',
+    description: 'SAP Consultant | DevOps Engineer | Test Automation Specialist',
+    creator: '@ankitbana',
   },
   robots: {
     index: true,
@@ -45,7 +47,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

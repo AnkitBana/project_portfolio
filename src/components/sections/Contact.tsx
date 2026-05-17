@@ -47,19 +47,19 @@ export default function Contact() {
     {
       icon: <FaEnvelope className="w-6 h-6" />,
       label: 'Email',
-      value: 'your@email.com',
-      href: 'mailto:your@email.com',
+      value: 'aankit.sssingh@gmail.com',
+      href: 'mailto:aankit.sssingh@gmail.com',
     },
     {
       icon: <FaPhone className="w-6 h-6" />,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+91 (XXX) XXX-XXXX',
+      href: 'tel:+91XXXXXXXXXX',
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
       label: 'Location',
-      value: 'Your City, Country',
+      value: 'India',
       href: null,
     },
   ]
@@ -67,17 +67,17 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: <FaGithub size={24} />,
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/AnkitBana',
       label: 'GitHub',
     },
     {
       icon: <FaLinkedin size={24} />,
-      href: 'https://linkedin.com/in/yourusername',
+      href: 'https://linkedin.com/in/ankit-kumar-gautam',
       label: 'LinkedIn',
     },
     {
       icon: <FaTwitter size={24} />,
-      href: 'https://twitter.com/yourusername',
+      href: 'https://twitter.com/ankitbana',
       label: 'Twitter',
     },
   ]

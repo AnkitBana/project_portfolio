@@ -62,7 +62,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Your Name
+            Ankit Kumar Gautam
           </motion.h1>
 
           {/* Tagline */}
@@ -72,7 +72,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Full Stack Developer | Problem Solver | Tech Enthusiast
+            SAP Consultant | DevOps Engineer | Test Automation Specialist
           </motion.p>
 
           {/* Description */}
@@ -82,8 +82,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            I build exceptional digital experiences that make people's lives easier.
-            Specializing in modern web technologies and scalable solutions.
+            Passionate about SAP solutions, cloud infrastructure, and test automation.
+            Specializing in Docker, Kubernetes, TOSCA, and CBTA with 2 years of hands-on experience.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -115,7 +115,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/AnkitBana"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
@@ -124,7 +124,7 @@ export default function Hero() {
               <FaGithub size={28} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/ankit-kumar-gautam"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
@@ -133,7 +133,7 @@ export default function Hero() {
               <FaLinkedin size={28} />
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://twitter.com/ankitbana"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
@@ -142,7 +142,7 @@ export default function Hero() {
               <FaTwitter size={28} />
             </a>
             <a
-              href="mailto:your@email.com"
+              href="mailto:aankit.sssingh@gmail.com"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
               aria-label="Email"
             >
