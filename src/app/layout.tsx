@@ -3,8 +3,6 @@ import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
-import { ThemeProvider } from '@/components/common/ThemeProvider'
-import ThemeToggle from '@/components/common/ThemeToggle'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -47,14 +45,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ThemeToggle />
-        </ThemeProvider>
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased bg-white text-gray-900 transition-colors duration-300">
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   )
