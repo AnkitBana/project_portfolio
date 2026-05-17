@@ -119,7 +119,7 @@ export default function Projects() {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function Projects() {
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeFilter === filter.id
                   ? 'bg-primary-600 text-white shadow-lg scale-105'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
               {filter.label}
@@ -168,8 +168,8 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Project Image/Icon */}
-              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center overflow-hidden">
-                <div className="text-primary-600 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 flex items-center justify-center overflow-hidden">
+                <div className="text-primary-600 dark:text-primary-400 transform group-hover:scale-110 transition-transform duration-300">
                   {project.icon}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -177,10 +177,10 @@ export default function Projects() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -189,7 +189,7 @@ export default function Projects() {
                   {project.tags.slice(0, 3).map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full"
                     >
                       {tag}
                     </span>
@@ -199,20 +199,20 @@ export default function Projects() {
                 {/* Highlights */}
                 <ul className="space-y-2 mb-4">
                   {project.highlights.map((highlight, hIndex) => (
-                    <li key={hIndex} className="text-sm text-gray-600 flex items-start">
-                      <span className="text-primary-600 mr-2">✓</span>
+                    <li key={hIndex} className="text-sm text-gray-600 dark:text-gray-400 flex items-start">
+                      <span className="text-primary-600 dark:text-primary-400 mr-2">✓</span>
                       {highlight}
                     </li>
                   ))}
                 </ul>
 
                 {/* Links */}
-                <div className="flex gap-4 pt-4 border-t border-gray-100">
+                <div className="flex gap-4 pt-4 border-t border-gray-100 dark:border-gray-700">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   >
                     <FaGithub size={20} />
                     <span className="text-sm font-medium">Code</span>
@@ -222,7 +222,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                     >
                       <FaExternalLinkAlt size={18} />
                       <span className="text-sm font-medium">Demo</span>
@@ -242,7 +242,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Want to see more? Check out my GitHub profile for additional projects and contributions.
           </p>
           <a

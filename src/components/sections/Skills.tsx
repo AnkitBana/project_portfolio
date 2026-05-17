@@ -63,7 +63,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="section-padding bg-gray-50">
+    <section id="skills" className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,8 +89,8 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="text-primary-600">{category.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <div className="text-primary-600 dark:text-primary-400">{category.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
@@ -99,12 +99,12 @@ export default function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">
                         {skill.name}
                       </span>
-                      <span className="text-gray-600">{skill.level}%</span>
+                      <span className="text-gray-600 dark:text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
                       <motion.div
                         className={`h-full ${skill.color} rounded-full`}
                         initial={{ width: 0 }}
@@ -128,14 +128,14 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
             Tools & Technologies
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
             {tools.map((tool, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center gap-2 p-4 bg-white rounded-lg hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-lg transition-shadow duration-300"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -143,7 +143,7 @@ export default function Skills() {
                 whileHover={{ y: -5 }}
               >
                 <div className={tool.color}>{tool.icon}</div>
-                <span className="text-sm font-medium text-gray-700 text-center">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
                   {tool.name}
                 </span>
               </motion.div>
@@ -159,21 +159,21 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
             Certifications & Achievements
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
-              <div className="text-3xl font-bold text-blue-600 mb-2">AWS</div>
-              <p className="text-gray-700">Certified Solutions Architect</p>
+            <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">AWS</div>
+              <p className="text-gray-700 dark:text-gray-300">Certified Solutions Architect</p>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
-              <div className="text-3xl font-bold text-green-600 mb-2">TOSCA</div>
-              <p className="text-gray-700">Certified Test Automation Specialist</p>
+            <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-lg">
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">TOSCA</div>
+              <p className="text-gray-700 dark:text-gray-300">Certified Test Automation Specialist</p>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
-              <div className="text-3xl font-bold text-purple-600 mb-2">SAP</div>
-              <p className="text-gray-700">Certified Development Associate</p>
+            <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg">
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">SAP</div>
+              <p className="text-gray-700 dark:text-gray-300">Certified Development Associate</p>
             </div>
           </div>
         </motion.div>

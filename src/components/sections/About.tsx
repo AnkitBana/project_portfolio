@@ -23,7 +23,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,16 +45,16 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               I'm a passionate full-stack developer with a strong foundation in modern web technologies.
               With several years of experience, I've worked on diverse projects ranging from small business
               websites to large-scale enterprise applications.
             </p>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               My journey in software development started with a curiosity about how things work on the web.
               Today, I specialize in building responsive, user-friendly applications that solve real-world problems.
             </p>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
               or sharing my knowledge through blog posts and mentoring.
             </p>
@@ -78,14 +78,14 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-primary-600 flex-shrink-0">
+                  <div className="text-primary-600 dark:text-primary-400 flex-shrink-0">
                     {highlight.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                       {highlight.title}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-300">
                       {highlight.description}
                     </p>
                   </div>

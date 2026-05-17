@@ -121,56 +121,29 @@ export default function Hero() {
 
       <div className="container-custom relative z-10">
         <div className="text-center">
-          {/* Greeting with slide-in animation */}
+          {/* Main tagline with gradient text - now the hero */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, type: "spring" }}
-          >
-            <p className="text-lg md:text-xl text-primary-600 dark:text-primary-400 font-semibold mb-4">
-              👋 Hello, I'm
-            </p>
-          </motion.div>
-
-          {/* Name with creative design - smaller and stylish */}
-          <motion.div
-            className="mb-6"
-            initial={{ opacity: 0, scale: 0.5 }}
+            className="mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.8,
-              delay: 0.2,
               type: "spring",
-              bounce: 0.5
+              bounce: 0.4
             }}
           >
             <motion.h1
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-secondary-600 to-purple-600 dark:from-primary-400 dark:via-secondary-400 dark:to-purple-400 bg-clip-text text-transparent"
               whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
-              <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-purple-600 dark:from-primary-400 dark:via-secondary-400 dark:to-purple-400 bg-clip-text text-transparent">
-                Ankit Kumar Gautam
-              </span>
+              SAP Consultant | DevOps Engineer | CBTA Specialist
             </motion.h1>
             <motion.div
-              className="h-1 w-32 mx-auto bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full"
+              className="h-1 w-48 mx-auto bg-gradient-to-r from-primary-600 via-secondary-600 to-purple-600 rounded-full"
               initial={{ width: 0 }}
-              animate={{ width: 128 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              animate={{ width: 192 }}
+              transition={{ duration: 1, delay: 0.3 }}
             />
-          </motion.div>
-
-          {/* Animated tagline with gradient text */}
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <p className="text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-purple-600 dark:from-primary-400 dark:via-secondary-400 dark:to-purple-400 bg-clip-text text-transparent">
-              SAP Consultant | DevOps Engineer | CBTA Specialist
-            </p>
           </motion.div>
 
           {/* Description with stagger effect */}
