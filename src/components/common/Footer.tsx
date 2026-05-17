@@ -1,11 +1,22 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart, FaArrowUp } from 'react-icons/fa'
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  if (!mounted) {
+    return null
   }
 
   const quickLinks = [

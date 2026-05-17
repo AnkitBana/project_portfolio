@@ -7,8 +7,10 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
@@ -16,6 +18,10 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   const navItems = [
     { label: 'Home', href: '#hero' },
@@ -39,7 +45,7 @@ export default function Header() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-lg py-4'
+          ? 'bg-white dark:bg-gray-900 shadow-lg py-4'
           : 'bg-transparent py-6'
       }`}
       initial={{ y: -100 }}
@@ -55,7 +61,7 @@ export default function Header() {
               e.preventDefault()
               scrollToSection('#hero')
             }}
-            className="text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors duration-300"
+            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-500 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
           >
             Ankit<span className="text-primary-600">.</span>
@@ -71,7 +77,7 @@ export default function Header() {
                   e.preventDefault()
                   scrollToSection(item.href)
                 }}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-300 relative group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -100,7 +106,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-900 hover:text-primary-600 transition-colors duration-300"
+            className="md:hidden text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-500 transition-colors duration-300"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -125,7 +131,7 @@ export default function Header() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 py-2 border-b border-gray-100"
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 font-medium transition-colors duration-300 py-2 border-b border-gray-100 dark:border-gray-700"
                 >
                   {item.label}
                 </a>
