@@ -123,7 +123,7 @@ export default function Blog() {
   const featuredPost = blogPosts.find(post => post.featured)
 
   return (
-    <section id="blog" className="section-padding bg-gray-50">
+    <section id="blog" className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ export default function Blog() {
             <div className="card overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Featured Image */}
-                <div className="relative h-64 md:h-auto bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                <div className="relative h-64 md:h-auto bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <span className="absolute top-4 left-4 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-full">
                     Featured
@@ -158,13 +158,13 @@ export default function Blog() {
 
                 {/* Featured Content */}
                 <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
                     <span className="flex items-center gap-2">
                       <FaCalendar />
-                      {new Date(featuredPost.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {new Date(featuredPost.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
                       })}
                     </span>
                     <span className="flex items-center gap-2">
@@ -173,11 +173,11 @@ export default function Blog() {
                     </span>
                   </div>
 
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                     {featuredPost.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">
                     {featuredPost.excerpt}
                   </p>
 
@@ -185,7 +185,7 @@ export default function Blog() {
                     {featuredPost.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-full"
+                        className="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full"
                       >
                         {tag}
                       </span>
@@ -217,7 +217,7 @@ export default function Blog() {
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category.id
                   ? 'bg-primary-600 text-white shadow-lg scale-105'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
               }`}
             >
               {category.label} ({category.count})
@@ -237,17 +237,17 @@ export default function Blog() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Post Image */}
-              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Post Content */}
               <div className="p-6">
-                <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                <div className="flex items-center gap-4 text-xs text-gray-600 dark:text-gray-400 mb-3">
                   <span className="flex items-center gap-1">
                     <FaCalendar />
-                    {new Date(post.date).toLocaleDateString('en-US', { 
-                      month: 'short', 
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      month: 'short',
                       day: 'numeric',
                       year: 'numeric'
                     })}
@@ -258,11 +258,11 @@ export default function Blog() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
 
@@ -270,14 +270,14 @@ export default function Blog() {
                   {post.tags.slice(0, 2).map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded"
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <button className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <button className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Read Article
                   <FaArrowRight />
                 </button>

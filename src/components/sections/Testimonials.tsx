@@ -83,7 +83,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <section id="testimonials" className="section-padding bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function Testimonials() {
             className="card p-8 md:p-12 relative"
           >
             {/* Quote Icon */}
-            <div className="absolute top-8 left-8 text-primary-200">
+            <div className="absolute top-8 left-8 text-primary-200 dark:text-primary-800">
               <FaQuoteLeft size={48} />
             </div>
 
@@ -120,13 +120,13 @@ export default function Testimonials() {
             </div>
 
             {/* Testimonial Text */}
-            <p className="text-xl text-gray-700 text-center mb-8 leading-relaxed relative z-10">
+            <p className="text-xl text-gray-700 dark:text-gray-300 text-center mb-8 leading-relaxed relative z-10">
               "{testimonials[currentIndex].text}"
             </p>
 
             {/* Project Badge */}
             <div className="flex justify-center mb-6">
-              <span className="px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full">
+              <span className="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-semibold rounded-full">
                 Project: {testimonials[currentIndex].project}
               </span>
             </div>
@@ -136,13 +136,13 @@ export default function Testimonials() {
               <div className="w-20 h-20 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                 {testimonials[currentIndex].name.charAt(0)}
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-1">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                 {testimonials[currentIndex].name}
               </h4>
-              <p className="text-primary-600 font-medium mb-1">
+              <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">
                 {testimonials[currentIndex].role}
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
                 {testimonials[currentIndex].company}
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function Testimonials() {
             <div className="flex justify-between items-center mt-8">
               <button
                 onClick={prevTestimonial}
-                className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300 hover:scale-110"
+                className="w-12 h-12 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="Previous testimonial"
               >
                 <FaChevronLeft />
@@ -166,7 +166,7 @@ export default function Testimonials() {
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentIndex
                         ? 'bg-primary-600 w-8'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                        : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -175,7 +175,7 @@ export default function Testimonials() {
 
               <button
                 onClick={nextTestimonial}
-                className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300 hover:scale-110"
+                className="w-12 h-12 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="Next testimonial"
               >
                 <FaChevronRight />
@@ -209,7 +209,7 @@ export default function Testimonials() {
               </div>
 
               {/* Mini Text */}
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                 "{testimonial.text}"
               </p>
 
@@ -219,10 +219,10 @@ export default function Testimonials() {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-900 text-sm">
+                  <h5 className="font-semibold text-gray-900 dark:text-white text-sm">
                     {testimonial.name}
                   </h5>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     {testimonial.role}
                   </p>
                 </div>
@@ -239,21 +239,21 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-4xl font-bold text-primary-600 mb-2">50+</div>
-            <p className="text-gray-600">Projects Completed</p>
+          <div className="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+            <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+            <p className="text-gray-600 dark:text-gray-300">Projects Completed</p>
           </div>
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-4xl font-bold text-primary-600 mb-2">30+</div>
-            <p className="text-gray-600">Happy Clients</p>
+          <div className="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+            <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">30+</div>
+            <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
           </div>
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-4xl font-bold text-primary-600 mb-2">2+</div>
-            <p className="text-gray-600">Years Experience</p>
+          <div className="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+            <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">2+</div>
+            <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
           </div>
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-4xl font-bold text-primary-600 mb-2">100%</div>
-            <p className="text-gray-600">Client Satisfaction</p>
+          <div className="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+            <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">100%</div>
+            <p className="text-gray-600 dark:text-gray-300">Client Satisfaction</p>
           </div>
         </motion.div>
       </div>
