@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import { useTheme } from './ThemeProvider'
+import { useTheme } from 'next-themes'
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function ThemeToggle() {
 
   return (
     <motion.button
-      onClick={toggleTheme}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="fixed bottom-24 right-8 w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-gray-800 dark:text-yellow-400 hover:scale-110 transition-all duration-300 z-50 border-2 border-gray-200 dark:border-gray-700"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
