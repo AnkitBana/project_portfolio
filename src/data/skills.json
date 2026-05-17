@@ -5,7 +5,7 @@
     "category": "other",
     "proficiency": 90,
     "icon": "SiSap",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-2",
@@ -13,7 +13,7 @@
     "category": "tools",
     "proficiency": 88,
     "icon": "FaLinux",
-    "yearsOfExperience": 
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-3",
@@ -21,7 +21,7 @@
     "category": "tools",
     "proficiency": 85,
     "icon": "FaDocker",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-4",
@@ -29,7 +29,7 @@
     "category": "tools",
     "proficiency": 82,
     "icon": "SiKubernetes",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-5",
@@ -37,7 +37,7 @@
     "category": "other",
     "proficiency": 87,
     "icon": "FaCogs",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-6",
@@ -45,7 +45,7 @@
     "category": "other",
     "proficiency": 85,
     "icon": "FaRobot",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-7",
@@ -53,7 +53,7 @@
     "category": "frontend",
     "proficiency": 90,
     "icon": "FaReact",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-8",
@@ -61,7 +61,7 @@
     "category": "frontend",
     "proficiency": 88,
     "icon": "SiNextdotjs",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-9",
@@ -69,7 +69,7 @@
     "category": "frontend",
     "proficiency": 85,
     "icon": "SiTypescript",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-10",
@@ -77,7 +77,7 @@
     "category": "frontend",
     "proficiency": 92,
     "icon": "SiJavascript",
-    "yearsOfExperience": 5
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-11",
@@ -93,7 +93,7 @@
     "category": "frontend",
     "proficiency": 95,
     "icon": "FaHtml5",
-    "yearsOfExperience": 6
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-13",
@@ -101,7 +101,7 @@
     "category": "frontend",
     "proficiency": 93,
     "icon": "FaCss3Alt",
-    "yearsOfExperience": 6
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-14",
@@ -109,7 +109,7 @@
     "category": "backend",
     "proficiency": 85,
     "icon": "FaNodeJs",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-15",
@@ -117,7 +117,7 @@
     "category": "backend",
     "proficiency": 83,
     "icon": "SiExpress",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-16",
@@ -125,7 +125,7 @@
     "category": "backend",
     "proficiency": 80,
     "icon": "FaPython",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-17",
@@ -141,7 +141,7 @@
     "category": "backend",
     "proficiency": 90,
     "icon": "FaServer",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-19",
@@ -157,7 +157,7 @@
     "category": "database",
     "proficiency": 85,
     "icon": "SiMongodb",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-21",
@@ -165,7 +165,7 @@
     "category": "database",
     "proficiency": 82,
     "icon": "SiPostgresql",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-22",
@@ -173,7 +173,7 @@
     "category": "database",
     "proficiency": 88,
     "icon": "SiMysql",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-23",
@@ -189,7 +189,7 @@
     "category": "tools",
     "proficiency": 92,
     "icon": "FaGitAlt",
-    "yearsOfExperience": 5
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-25",
@@ -197,7 +197,7 @@
     "category": "tools",
     "proficiency": 90,
     "icon": "FaGithub",
-    "yearsOfExperience": 5
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-26",
@@ -213,7 +213,7 @@
     "category": "tools",
     "proficiency": 83,
     "icon": "FaCodeBranch",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-28",
@@ -229,7 +229,7 @@
     "category": "other",
     "proficiency": 88,
     "icon": "FaTasks",
-    "yearsOfExperience": 4
+    "yearsOfExperience": 2
   },
   {
     "id": "skill-30",
@@ -237,6 +237,6 @@
     "category": "other",
     "proficiency": 86,
     "icon": "FaCheckCircle",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 2
   }
 ]
