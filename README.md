@@ -302,11 +302,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-**Your Name**
-- Website: [your-website.com](https://your-website.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourusername)
-- Email: your@email.com
+**Ankit Kumar Gautam**
+- GitHub: [@AnkitBana](https://github.com/AnkitBana)
+- LinkedIn: [Ankit Kumar Gautam](https://www.linkedin.com/in/ankitkrgautam/)
+- Email: aankit.sssingh@gmail.com
 
 ## 🙏 Acknowledgments
 
