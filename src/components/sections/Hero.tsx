@@ -27,7 +27,7 @@ export default function Hero() {
   const roles = ['SAP Consultant', 'DevOps Engineer', 'CBTA Specialist']
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large gradient orbs with pulsing effect */}
