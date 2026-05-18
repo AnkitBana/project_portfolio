@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
 import type { ContactFormData } from '@/types'
 
 export default function Contact() {
@@ -80,13 +80,8 @@ export default function Contact() {
     },
     {
       icon: <FaLinkedin size={24} />,
-      href: 'https://linkedin.com/in/ankit-kumar-gautam',
+      href: 'https://www.linkedin.com/in/ankitkrgautam',
       label: 'LinkedIn',
-    },
-    {
-      icon: <FaTwitter size={24} />,
-      href: 'https://twitter.com/ankitbana',
-      label: 'Twitter',
     },
   ]
 

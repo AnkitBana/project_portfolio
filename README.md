@@ -304,7 +304,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Ankit Kumar Gautam**
 - GitHub: [@AnkitBana](https://github.com/AnkitBana)
-- LinkedIn: [Ankit Kumar Gautam](https://www.linkedin.com/in/ankitkrgautam/)
+- LinkedIn: [Ankit Kumar Gautam](https://www.linkedin.com/in/ankitkrgautam)
 - Email: aankit.sssingh@gmail.com
 
 ## 🙏 Acknowledgments

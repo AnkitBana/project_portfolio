@@ -816,7 +816,7 @@ If you can't resolve an issue:
 3. **Contact support:**
    - Email: aankit.sssingh@gmail.com
    - GitHub: https://github.com/AnkitBana
-   - LinkedIn: https://www.linkedin.com/in/ankitkrgautam/
+   - LinkedIn: https://www.linkedin.com/in/ankitkrgautam
 
 4. **Provide details:**
    - Error messages

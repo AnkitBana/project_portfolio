@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart, FaArrowUp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaArrowUp } from 'react-icons/fa'
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false)
@@ -40,13 +40,8 @@ export default function Footer() {
     },
     {
       icon: <FaLinkedin size={24} />,
-      href: 'https://linkedin.com/in/ankit-kumar-gautam',
+      href: 'https://www.linkedin.com/in/ankitkrgautam',
       label: 'LinkedIn',
-    },
-    {
-      icon: <FaTwitter size={24} />,
-      href: 'https://twitter.com/ankitbana',
-      label: 'Twitter',
     },
     {
       icon: <FaEnvelope size={24} />,

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaDocker, FaAws } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaDocker, FaAws } from 'react-icons/fa'
 import { SiKubernetes, SiJenkins, SiTerraform, SiAnsible } from 'react-icons/si'
 import { HiArrowDown } from 'react-icons/hi'
 
@@ -210,8 +210,7 @@ export default function Hero() {
           >
             {[
               { href: "https://github.com/AnkitBana", Icon: FaGithub, label: "GitHub" },
-              { href: "https://linkedin.com/in/ankit-kumar-gautam", Icon: FaLinkedin, label: "LinkedIn" },
-              { href: "https://twitter.com/ankitbana", Icon: FaTwitter, label: "Twitter" },
+              { href: "https://www.linkedin.com/in/ankitkrgautam", Icon: FaLinkedin, label: "LinkedIn" },
               { href: "mailto:aankit.sssingh@gmail.com", Icon: FaEnvelope, label: "Email" },
             ].map(({ href, Icon, label }, index) => (
               <motion.a

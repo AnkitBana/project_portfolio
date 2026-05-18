@@ -844,7 +844,7 @@ docker-compose logs -f  # View logs
 - **Ngrok Dashboard**: http://localhost:4040
 - **Vercel Dashboard**: https://vercel.com/dashboard
 - **GitHub Repo**: https://github.com/AnkitBana
-- **LinkedIn**: https://www.linkedin.com/in/ankitkrgautam/
+- **LinkedIn**: https://www.linkedin.com/in/ankitkrgautam
 
 ### Support
 

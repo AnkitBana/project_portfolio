@@ -69,7 +69,7 @@ Quick reference guide for deploying your portfolio.
 - **Name**: Ankit Kumar Gautam
 - **Email**: aankit.sssingh@gmail.com
 - **GitHub**: [@AnkitBana](https://github.com/AnkitBana)
-- **LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam/)
+- **LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam)
 
 ### Project URLs
 - **Local Dev**: http://localhost:3000
@@ -214,7 +214,7 @@ npm run dev -- -p 3001
 3. **Contact**
    - Email: aankit.sssingh@gmail.com
    - GitHub: https://github.com/AnkitBana
-   - LinkedIn: https://www.linkedin.com/in/ankitkrgautam/
+   - LinkedIn: https://www.linkedin.com/in/ankitkrgautam
 
 ### When Asking for Help
 
@@ -325,8 +325,8 @@ Your portfolio is fully configured and ready to go live.
 
 ---
 
-**Last Updated**: 2026-05-18  
-**Author**: Ankit Kumar Gautam  
-**Contact**: aankit.sssingh@gmail.com  
-**GitHub**: [@AnkitBana](https://github.com/AnkitBana)  
-**LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam/)
+**Last Updated**: 2026-05-18
+**Author**: Ankit Kumar Gautam
+**Contact**: aankit.sssingh@gmail.com
+**GitHub**: [@AnkitBana](https://github.com/AnkitBana)
+**LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam)
