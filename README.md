@@ -316,7 +316,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Support
 
-For support, email your@email.com or open an issue on GitHub.
+For support, email aankit.sssingh@gmail.com or open an issue on GitHub.
 
 ---
 
