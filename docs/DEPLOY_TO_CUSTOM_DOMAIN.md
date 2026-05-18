@@ -85,14 +85,18 @@ Click "Environment Variables" and add these:
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=aankit.sssingh@gmail.com
-SMTP_PASS=fcreaepzyvgfovkd
-SMTP_FROM=aankit.sssingh@gmail.com
-CONTACT_EMAIL=aankit.sssingh@gmail.com
-NEXT_PUBLIC_SITE_URL=https://www.ankidev.space
-NEXT_PUBLIC_SITE_NAME=Ankit Kumar Gautam Portfolio
-NEXT_PUBLIC_CONTACT_EMAIL=aankit.sssingh@gmail.com
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_gmail_app_password_here
+SMTP_FROM=your_email@gmail.com
+CONTACT_EMAIL=your_email@gmail.com
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_NAME=Your Portfolio Name
+NEXT_PUBLIC_CONTACT_EMAIL=your_email@gmail.com
 ```
+
+**⚠️ SECURITY NOTE**: Replace the placeholder values above with your actual credentials in Vercel's dashboard. Never commit real credentials to Git!
+
+For Gmail app password setup, see `docs/EMAIL_SETUP.md`.
 
 **Important:** Add each variable one by one:
 1. Name: `SMTP_HOST`, Value: `smtp.gmail.com`
