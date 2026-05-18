@@ -67,11 +67,13 @@ Quick reference guide for deploying your portfolio.
 
 ### Your Details
 - **Name**: Ankit Kumar Gautam
+- **Website**: [www.ankidev.space](https://www.ankidev.space)
 - **Email**: aankit.sssingh@gmail.com
 - **GitHub**: [@AnkitBana](https://github.com/AnkitBana)
 - **LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam)
 
 ### Project URLs
+- **Production**: https://www.ankidev.space
 - **Local Dev**: http://localhost:3000
 - **Ngrok Dashboard**: http://localhost:4040 (when tunnel running)
 - **Repository**: https://github.com/AnkitBana
@@ -327,6 +329,7 @@ Your portfolio is fully configured and ready to go live.
 
 **Last Updated**: 2026-05-18
 **Author**: Ankit Kumar Gautam
+**Website**: [www.ankidev.space](https://www.ankidev.space)
 **Contact**: aankit.sssingh@gmail.com
 **GitHub**: [@AnkitBana](https://github.com/AnkitBana)
 **LinkedIn**: [ankitkrgautam](https://www.linkedin.com/in/ankitkrgautam)
