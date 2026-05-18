@@ -59,10 +59,28 @@ export default function Header() {
   ]
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''))
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    // First close the menu and restore body position
+    if (isMobileMenuOpen) {
+      const scrollY = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, parseInt(scrollY || '0') * -1)
       setIsMobileMenuOpen(false)
+      
+      // Wait for menu to close and body to restore, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId.replace('#', ''))
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      // Desktop navigation - direct scroll
+      const element = document.getElementById(sectionId.replace('#', ''))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 
