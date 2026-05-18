@@ -33,6 +33,11 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Docke
 - **Icons**: React Icons
 - **Validation**: Zod
 
+### Backend
+- **API Routes**: Next.js API Routes
+- **Email Service**: Nodemailer
+- **Validation**: Server-side validation
+
 ### Infrastructure
 - **Containerization**: Docker
 - **Web Server**: Nginx
@@ -207,7 +212,7 @@ public/
 
 ## 🔒 Environment Variables
 
-Required environment variables (see `.env.example`):
+Required environment variables (see `.env.example` and `.env.local.example`):
 
 ```env
 # Site Configuration
@@ -215,9 +220,26 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_SITE_NAME=Your Portfolio
 NEXT_PUBLIC_CONTACT_EMAIL=your@email.com
 
+# Email Configuration (Contact Form)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your@gmail.com
+SMTP_PASS=your-app-password
+SMTP_FROM=your@gmail.com
+CONTACT_EMAIL=aankit.sssingh@gmail.com
+
 # Ngrok (optional)
 NGROK_AUTHTOKEN=your_ngrok_token
 ```
+
+### Email Setup
+
+The contact form requires email configuration. See [Email Setup Guide](docs/EMAIL_SETUP.md) for detailed instructions on:
+- Setting up Gmail with App Passwords
+- Configuring alternative email providers
+- Testing the contact form
+- Troubleshooting common issues
 
 ## 🎨 Styling
 
@@ -236,16 +258,22 @@ The website is fully responsive and tested on:
 - Desktops (1024px and up)
 - Large screens (1280px and up)
 
-## 🔮 Future Enhancements (Phase 2)
+## ✅ Backend Features (Implemented)
 
-- [ ] Backend API with Next.js API routes
+- [x] Contact Form API with email notifications
+- [x] Server-side validation
+- [x] Auto-reply emails to form submissions
+- [x] SMTP email integration (Gmail, SendGrid, etc.)
+
+## 🔮 Future Enhancements
+
 - [ ] Database integration (MongoDB/PostgreSQL)
 - [ ] Authentication system
 - [ ] Admin panel for content management
-- [ ] Contact form backend
-- [ ] Blog CMS integration
+- [ ] Blog CMS integration (Contentful, Sanity)
 - [ ] Analytics dashboard
-- [ ] Real-time notifications
+- [ ] Rate limiting for API routes
+- [ ] CAPTCHA for spam prevention
 
 ## 🐛 Troubleshooting
 

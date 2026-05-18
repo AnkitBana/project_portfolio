@@ -25,13 +25,21 @@ export default function Contact() {
     setStatus('loading')
     setErrorMessage('')
 
-    // Simulate form submission (replace with actual API call in Phase 2)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      
-      // For now, just log the data
-      console.log('Form submitted:', formData)
-      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
       setStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
       
@@ -39,7 +47,7 @@ export default function Contact() {
       setTimeout(() => setStatus('idle'), 5000)
     } catch (error) {
       setStatus('error')
-      setErrorMessage('Something went wrong. Please try again.')
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
     }
   }
 
